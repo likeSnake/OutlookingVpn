@@ -1,0 +1,13 @@
+<resources>
+
+
+    <string name="app_name" translatable="false">Outlooking VPN</string>
+
+
+    <string name="success" translatable="false">Success</string>
+    <string name="success_connected" translatable="false">Connected Success</string>
+
+    <string name="disconnected" translatable="false">Disconnected</string>
+
+
+</resources>

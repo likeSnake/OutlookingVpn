@@ -1,0 +1,59 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+
+    plugins {
+
+
+        id 'com.android.application' version '7.1.0-alpha11'
+
+//        id 'com.android.application' version '7.2'
+
+        id 'com.android.library' version '7.1.0-alpha11'
+        id 'org.jetbrains.kotlin.android' version '1.6.10'
+        id 'org.jetbrains.kotlin.plugin.parcelize' version '1.6.0-M1'
+
+    }
+
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+//        classpath("com.android.tools.build:gradle:7.1.1")
+
+        classpath 'com.android.tools.build:gradle:7.0.2'
+//        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
+
+        classpath("com.google.android.gms:oss-licenses-plugin:0.10.4")
+        classpath("com.google.firebase:firebase-crashlytics-gradle:2.7.1")
+
+        classpath("com.google.gms:google-services:4.3.10")
+    }
+
+}
+
+
+
+
+rootProject.name = "OutlookingVpn"
+include ':app'
+include ':core'
+include ':plugin'

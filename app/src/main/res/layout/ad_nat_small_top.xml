@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.go.outlooking.vpn.ads.TemplateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ads_template_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:gnt_template_type="@layout/gnt_small_template_view_top">
+
+</com.go.outlooking.vpn.ads.TemplateView>

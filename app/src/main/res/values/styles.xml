@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Shadowsocks.Immersive.Navigation">
+        <item name="android:statusBarColor">#04665D</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+
+    </style>
+
+    <style name="ProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+    </style>
+
+
+    <style name="ThemeStart" parent="Theme.Shadowsocks.Immersive.Navigation">
+
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:windowBackground">@drawable/bg_start</item>
+
+    </style>
+
+
+</resources>

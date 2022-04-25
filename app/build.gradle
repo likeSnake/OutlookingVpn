@@ -1,0 +1,101 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+
+    id("com.google.android.gms.oss-licenses-plugin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+
+//        consumerProguardFiles "consumer-rules.pro"
+
+//        buildToolsRevision("31.0.0")
+
+//        applicationId "com.go.outlooking.vpn"
+
+        applicationId = "com.github.shadowsocks"
+
+
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0.1"
+
+        multiDexEnabled true
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+
+        release {
+            storeFile file('outlooking_vpn_20220409.jks')
+            storePassword 'outlookingvpn'
+            keyAlias 'outlooking'
+            keyPassword 'outlookingvpn'
+        }
+
+        debug {
+            storeFile file('outlooking_vpn_test_sign.jks')
+            storePassword 'outlookingtest'
+            keyAlias 'outlookingtest'
+            keyPassword 'outlookingtest'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation project(path: ':core')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation(platform("com.google.firebase:firebase-bom:29.1.0"))
+    implementation ("com.google.firebase:firebase-config-ktx")
+    implementation ("com.google.firebase:firebase-analytics-ktx")
+
+
+    implementation("com.facebook.android:facebook-android-sdk:12.2.0")
+
+
+    implementation("com.google.android.gms:play-services-ads:20.5.0")
+
+//    implementation("com.pangle.global:ads-sdk:4.1.1.2")
+    implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")
+
+    implementation 'com.tencent:mmkv:1.2.13'
+
+}
